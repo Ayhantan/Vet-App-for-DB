@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import logo from '../components/logo2.png';
+import vet from '../components/vet.png';
+
 
 
 function LoginPage() {
@@ -28,9 +31,9 @@ function LoginPage() {
   return (
     <div className="login-wrapper">
       <div className="login-left">
-        <img src="/images/logo.png" alt="Logo" className="login-logo" />
-        <h1 className="login-welcome">Hoşgeldiniz.</h1>
-        <p className="login-desc">Kullanıcı Adı ve Parolanız ile Giriş Yapınız.</p>
+        <img src={logo} alt="Logo" className="login-logo" />
+        <h1 className="login-welcome">Well Come to Smart Veterinary Clinic</h1>
+        <p className="login-desc">Login with your Username and Password.</p>
 
         <form className="login-form" onSubmit={handleSubmit}>
           <input
@@ -49,11 +52,13 @@ function LoginPage() {
             onChange={handleChange}
             required
           />
-          <button type="submit">Giriş</button>
+          <button type="submit">Login</button>
           {error && <p className="login-error">{error}</p>}
         </form>
       </div>
-      <div className="login-right"></div>
+      <div className="login-right">
+        <img src={vet} alt="Vet Illustration" className="vet-image" />
+      </div>
     </div>
   );
 }
