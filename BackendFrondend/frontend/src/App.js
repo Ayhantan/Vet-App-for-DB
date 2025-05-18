@@ -16,7 +16,7 @@ function Layout() {
 
   return (
     <div style={{ padding: '20px' }}>
-      {!isLoginPage && <h1>Vet Clinic Dashboard</h1>}
+      {!isLoginPage && <h1>🐰 Vet Clinic Dashboard 🕷️</h1>}
       {!isLoginPage && <NavBar />}
       <Routes>
         <Route path="/" element={<LoginPage />} />

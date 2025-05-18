@@ -56,7 +56,7 @@ function AppointmentsPage() {
 
   return (
     <div>
-      <h2>Appointments</h2>
+      <h2>Appointments ⏰</h2>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <select name="Pet_ID" value={form.Pet_ID} onChange={handleChange} required>
           <option value="">Select Pet</option>
@@ -82,9 +82,11 @@ function AppointmentsPage() {
       <ul>
         {appointments.map(a => (
           <li key={a.Appointment_ID}>
-            {a.Appointment_Date} {a.Appointment_Time} - {a.PetName} with {a.VetName} - {a.Reason}
+            <span>
+            {a.Appointment_Date} {a.Appointment_Time} - {a.PetName} with {a.VetName} - {a.Reason}</span>
+            <div>
             <button onClick={() => handleEdit(a)} style={{ marginLeft: '10px' }}>Edit</button>
-            <button onClick={() => handleDelete(a.Appointment_ID)} style={{ marginLeft: '5px' }}>Delete</button>
+            <button onClick={() => handleDelete(a.Appointment_ID)} style={{ marginLeft: '5px' }}>Delete</button></div>
           </li>
         ))}
       </ul>

@@ -1,0 +1,33 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  padding: 16px 24px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #6c5ce7;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 6px 12px;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  background-color: #f1f1ff;
+  color: #4b3bc2;
+}
+
+.nav-link.active {
+  background-color: #6c5ce7;
+  color: #fff;
+}

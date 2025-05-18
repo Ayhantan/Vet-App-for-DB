@@ -47,7 +47,7 @@ function PrescriptionsPage() {
 
   return (
     <div>
-      <h2>Prescriptions</h2>
+      <h2>Prescriptions 📜</h2>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <select name="Record_ID" value={form.Record_ID} onChange={handleChange} required>
           <option value="">Select Medical Record</option>
@@ -63,9 +63,11 @@ function PrescriptionsPage() {
       <ul>
         {prescriptions.map(p => (
           <li key={p.Prescription_ID}>
-            {p.PetName} - {p.Dosage} for {p.Duration}
+            <span>
+            {p.PetName} - {p.Dosage} for {p.Duration}</span>
+            <div>
             <button onClick={() => handleEdit(p)} style={{ marginLeft: '10px' }}>Edit</button>
-            <button onClick={() => handleDelete(p.Prescription_ID)} style={{ marginLeft: '5px' }}>Delete</button>
+            <button onClick={() => handleDelete(p.Prescription_ID)} style={{ marginLeft: '5px' }}>Delete</button></div>
           </li>
         ))}
       </ul>

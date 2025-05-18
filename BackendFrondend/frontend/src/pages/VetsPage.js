@@ -1,4 +1,5 @@
 // src/pages/VetsPage.js
+//<div style={{ display: 'flex', justifyContent: 'center' }}></div>
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -55,13 +56,14 @@ function VetsPage() {
 
   return (
     <div>
-      <h2>Veterinarians</h2>
+      <h2>Veterinarians 👨🏽‍⚕️</h2>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <input name="Name" value={form.Name} onChange={handleChange} placeholder="Name" required />
         <input name="Phone_Number" value={form.Phone_Number} onChange={handleChange} placeholder="Phone Number" />
         <input name="Specialization" value={form.Specialization} onChange={handleChange} placeholder="Specialization" />
         <button type="submit">{editingId ? 'Update' : 'Add'} Vet</button>
       </form>
+      
 
       <ul>
         {vets.map(vet => (

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+
 function PetsPage() {
   const [pets, setPets] = useState([]);
   const [owners, setOwners] = useState([]);
@@ -79,9 +80,9 @@ function PetsPage() {
 
   return (
     <div>
-      <h2>Pets</h2>
+      <h2>🦏 🦜 Pets 🐶 🐺 </h2>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div className="search-bar">
         <select value={searchBy} onChange={(e) => setSearchBy(e.target.value)}>
           <option value="pet">Search by Pet</option>
           <option value="owner">Search by Owner</option>
@@ -93,6 +94,7 @@ function PetsPage() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
+
 
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <select name="Owner_ID" value={form.Owner_ID} onChange={handleChange} required>
@@ -110,12 +112,15 @@ function PetsPage() {
         <button type="submit">{editingId ? 'Update' : 'Add'} Pet</button>
       </form>
 
+
       <ul>
         {filteredPets.map(pet => (
           <li key={pet.Pet_ID}>
-            {pet.Name} ({pet.Species}) - Owner: {pet.OwnerName}
-            <button onClick={() => handleEdit(pet)} style={{ marginLeft: '10px' }}>Edit</button>
-            <button onClick={() => handleDelete(pet.Pet_ID)} style={{ marginLeft: '5px' }}>Delete</button>
+            <span>
+              {pet.Name} ({pet.Species}) - Owner: {pet.OwnerName}</span>
+            <div>
+              <button onClick={() => handleEdit(pet)} style={{ marginLeft: '10px' }}>Edit</button>
+              <button onClick={() => handleDelete(pet.Pet_ID)} style={{ marginLeft: '5px' }}>Delete</button></div>
           </li>
         ))}
       </ul>

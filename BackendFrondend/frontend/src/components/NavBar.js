@@ -1,23 +1,17 @@
 // src/components/NavBar.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './NavBar.css';
 
 function NavBar() {
-  const linkStyle = {
-    marginRight: '10px',
-    textDecoration: 'none',
-    color: 'blue',
-    fontWeight: 'bold'
-  };
-
   return (
-    <nav style={{ marginBottom: '20px' }}>
-      <Link to="/owners" style={linkStyle}>Owners</Link>
-      <Link to="/vets" style={linkStyle}>Vets</Link>
-      <Link to="/pets" style={linkStyle}>Pets</Link>
-      <Link to="/appointments" style={linkStyle}>Appointments</Link>
-      <Link to="/records" style={linkStyle}>Records</Link>
-      <Link to="/prescriptions" style={linkStyle}>Prescriptions</Link>
+    <nav className="navbar">
+      <NavLink to="/owners" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Owners</NavLink>
+      <NavLink to="/vets" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Vets</NavLink>
+      <NavLink to="/pets" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Pets</NavLink>
+      <NavLink to="/appointments" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Appointments</NavLink>
+      <NavLink to="/records" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Records</NavLink>
+      <NavLink to="/prescriptions" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Prescriptions</NavLink>
     </nav>
   );
 }

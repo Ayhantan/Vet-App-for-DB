@@ -57,7 +57,7 @@ function OwnersPage() {
 
   return (
     <div>
-      <h2>Owners</h2>
+      <h2>Owners 🐒</h2>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <input name="Name" value={form.Name} onChange={handleChange} placeholder="Name" required />
         <input name="Email" value={form.Email} onChange={handleChange} placeholder="Email" />

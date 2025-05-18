@@ -54,7 +54,7 @@ function RecordsPage() {
 
   return (
     <div>
-      <h2>Medical Records</h2>
+      <h2>Medical Records 📟</h2>
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <select name="Pet_ID" value={form.Pet_ID} onChange={handleChange} required>
           <option value="">Select Pet</option>
@@ -78,9 +78,12 @@ function RecordsPage() {
       <ul>
         {records.map(r => (
           <li key={r.Record_ID}>
+            <span>
             {r.Date} - {r.PetName} - {r.Diagnosis} by {r.VetName}
+            </span>
+            <div>
             <button onClick={() => handleEdit(r)} style={{ marginLeft: '10px' }}>Edit</button>
-            <button onClick={() => handleDelete(r.Record_ID)} style={{ marginLeft: '5px' }}>Delete</button>
+            <button onClick={() => handleDelete(r.Record_ID)} style={{ marginLeft: '5px' }}>Delete</button></div>
           </li>
         ))}
       </ul>
